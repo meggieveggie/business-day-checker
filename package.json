@@ -1,0 +1,22 @@
+{
+  "name": "business-day-checker",
+  "version": "1.0.0",
+  "description": "Business day checker",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meggieveggie/business-day-checker.git"
+  },
+  "author": "Megan Venter",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/meggieveggie/business-day-checker/issues"
+  },
+  "homepage": "https://github.com/meggieveggie/business-day-checker#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
