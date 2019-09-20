@@ -4,7 +4,7 @@
   "description": "Business day checker",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha --require @babel/register test/*.test.js --exit"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,18 @@
   },
   "homepage": "https://github.com/meggieveggie/business-day-checker#readme",
   "dependencies": {
+    "dotenv": "^8.1.0",
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.0",
+    "@babel/core": "^7.6.0",
+    "@babel/node": "^7.6.1",
+    "@babel/preset-env": "^7.6.0",
+    "@babel/register": "^7.6.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "mocha": "^6.2.0",
+    "nodemon": "^1.19.2"
   }
 }
