@@ -3,11 +3,9 @@ import calculator from "business-days-calculator"
 import Holidays from "date-holidays"
 
 export default function businessDayChecker (dateTime, delay){
-    var dt = DateTime.fromFormat(dateTime, "LLLL dd yyyy");
-    var date = new Date(dt);
-    var startDate = new Date(dt);
+    var date = new Date(dateTime);
+    var startDate = new Date(dateTime);
     startDate.setDate(startDate.getDate() + 1)
-    //date.setDate(date.getDate() + 1)
     var hd = new Holidays();
     hd.init({country: 'US'})
 
