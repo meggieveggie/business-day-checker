@@ -16,8 +16,8 @@ describe('# Helpers', function() {
                 "holidayDays": 1,
                 "weekendDays": 2
             }
-            result = businessDayChecker("November 10 2018", 3);
-            expect(result).to.equal(expectedResult)
+            var result = businessDayChecker("November 10 2018", 3);
+            expect(result).to.deep.equal(expectedResult)
         });
         it("'November 15 2018', delay 3 should return November 19th, 2 weekend days and 0 holiday days", () => {
             var expectedResult = {
@@ -26,18 +26,18 @@ describe('# Helpers', function() {
                 "holidayDays": 0,
                 "weekendDays": 2
             }
-            result = businessDayChecker("November 10 2018", 3);
-            expect(result).to.equal(expectedResult)
+            var result = businessDayChecker("November 15 2018", 3);
+            expect(result).to.deep.equal(expectedResult)
         });
-        it("'December 25 2018', delay 20 should return January 18th 2019, 8 weekend days and 2 holiday days", () => {
+        it("'December 25 2018', delay 20 should return January 23rd 2019, 8 weekend days and 3 holiday days", () => {
             var expectedResult = {
                 "businessDate": "December 25 2018",
-                "totalDays": 24,
-                "holidayDays": 2,
+                "totalDays": 30,
+                "holidayDays": 3,
                 "weekendDays": 8
             }
-            result = businessDayChecker("November 10 2018", 3);
-            expect(result).to.equal(expectedResult)
+            var result = businessDayChecker("December 25 2018", 20);
+            expect(result).to.deep.equal(expectedResult)
         });
     });
 });
