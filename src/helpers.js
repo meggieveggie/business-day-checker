@@ -2,6 +2,12 @@ import { DateTime } from "luxon"
 import calculator from "business-days-calculator"
 import Holidays from "date-holidays"
 
+/**
+ * Function takes date time with delay and calculates final day after delay 
+ * Calculates total days, holiday days and weekend days
+ * @param {string} dateTime inital date
+ * @param {int}    delay    amount of business days for process to finish
+ */  
 export default function businessDayChecker (dateTime, delay){
     var date = new Date(dateTime);
     var startDate = new Date(dateTime);
