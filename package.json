@@ -4,7 +4,8 @@
   "description": "Business day checker",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --require @babel/register test/*.test.js --exit"
+    "test": "mocha --require @babel/register test/*.test.js --exit",
+    "start": "nodemon --exec babel-node src/api.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/meggieveggie/business-day-checker#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "business-days-calculator": "^2.2.0",
     "date-holidays": "^1.4.3",
     "dotenv": "^8.1.0",
