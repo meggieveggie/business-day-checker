@@ -43,6 +43,10 @@ export function businessDayChecker (dateTime, delay, locale='US'){
     }
 };
 
+/**
+ * Formats response for client
+ * @param {object} initialQuery object with a key of inital date and delay 
+ */
 export function formatResponse (initialQuery){
     var results = businessDayChecker(initialQuery.initialDate, initialQuery.delay, initialQuery.locale)  
     return {

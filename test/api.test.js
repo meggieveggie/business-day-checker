@@ -72,20 +72,20 @@ describe('# API', function() {
                     expect(res.body).to.deep.equal(expectedResult)
                 });
         });
-    it("GET /api/v1/isBusinessDay/ returns false when not business day", () => {
-        var dt = DateTime.fromFormat('November 10 2018', "LLLL dd yyyy");
-        var expectedResult = {
-            "isBusinessDay": false
-        }
-        chai.request(app)
-            .get('/api/v1/isBusinessDay/')
-            .query({
-                "date": dt.toISO()
-            })
-            .end((err, res) => {
-                expect(res.body).to.deep.equal(expectedResult)
-            });
-    });
+        it("GET /api/v1/isBusinessDay/ returns false when not business day", () => {
+            var dt = DateTime.fromFormat('November 10 2018', "LLLL dd yyyy");
+            var expectedResult = {
+                "isBusinessDay": false
+            }
+            chai.request(app)
+                .get('/api/v1/isBusinessDay/')
+                .query({
+                    "date": dt.toISO()
+                })
+                .end((err, res) => {
+                    expect(res.body).to.deep.equal(expectedResult)
+                });
+        });
 });
 
 });
