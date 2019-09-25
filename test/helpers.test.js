@@ -18,7 +18,7 @@ describe('# Helpers', function() {
                 "holidayDays": 1,
                 "weekendDays": 2
             }
-            var result = businessDayChecker(dt.toString(), 3);
+            var result = businessDayChecker(dt.toString(), 3, "UTC+1");
             expect(result).to.deep.equal(expectedResult)
         });
         it("'November 15 2018', delay 3 should return November 19th, 2 weekend days and 0 holiday days", () => {
@@ -29,7 +29,7 @@ describe('# Helpers', function() {
                 "holidayDays": 0,
                 "weekendDays": 2
             }
-            var result = businessDayChecker(dt.toString(), 3);
+            var result = businessDayChecker(dt.toString(), 3, "UTC+1");
             expect(result).to.deep.equal(expectedResult)
         });
         it("'December 25 2018', delay 20 should return January 24th 2019, 8 weekend days and 3 holiday days", () => {
@@ -40,7 +40,7 @@ describe('# Helpers', function() {
                 "holidayDays": 3,
                 "weekendDays": 8
             }
-            var result = businessDayChecker(dt.toString(), 20);
+            var result = businessDayChecker(dt.toString(), 20, "UTC+1");
             expect(result).to.deep.equal(expectedResult)
         });
     });
@@ -50,7 +50,8 @@ describe('# Helpers', function() {
             var expectedResult = {
                 "initialQuery": {
                   "initialDate": dt.toISO(),
-                  "delay": 20
+                  "delay": 20,
+                  "timezone": "UTC+1"
                 },
                 "results": {
                   "businessDate":  dt.plus(Duration.fromObject({days: 30})).toISO(),
@@ -62,7 +63,8 @@ describe('# Helpers', function() {
               var result = formatResponse( 
                {
                 "initialDate": dt.toISO(),
-                "delay": 20
+                "delay": 20,
+                "timezone": "UTC+1"
               });
               expect(result).to.deep.equal(expectedResult)
         })

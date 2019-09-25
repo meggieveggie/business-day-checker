@@ -8,9 +8,9 @@ import Holidays from "date-holidays"
  * @param {string} dateTime inital date
  * @param {int}    delay    amount of business days for process to finish
  */  
-export function businessDayChecker (dateTime, delay, locale='US'){
-    var date = DateTime.fromISO(dateTime)
-    var startDate = DateTime.fromISO(dateTime)
+export function businessDayChecker (dateTime, delay, timezone='UTC', locale='US'){
+    var date = DateTime.fromISO(dateTime, {zone: timezone})
+    var startDate = DateTime.fromISO(dateTime, {zone: timezone})
     var hd = new Holidays();
     hd.init({country: locale})
 
@@ -48,7 +48,7 @@ export function businessDayChecker (dateTime, delay, locale='US'){
  * @param {object} initialQuery object with a key of inital date and delay 
  */
 export function formatResponse (initialQuery){
-    var results = businessDayChecker(initialQuery.initialDate, initialQuery.delay, initialQuery.locale)  
+    var results = businessDayChecker(initialQuery.initialDate, initialQuery.delay, initialQuery.timezone, initialQuery.locale)  
     return {
         "initialQuery": initialQuery,
         "results": results

@@ -24,7 +24,8 @@ describe('# API', function() {
         var expectedResult = {
             "initialQuery": {
                 "initialDate": dt.toISO(),
-                "delay": 20
+                "delay": 20,
+                "timezone": "UTC+1"
             },
             "results": {
                 "businessDate":  dt.plus(Duration.fromObject({days: 30})).toISO(),
@@ -38,19 +39,21 @@ describe('# API', function() {
                 .get('/api/v1/businessDates/*')
                 .query({
                     "initialDate": dt.toISO(),
-                    "delay": 20
+                    "delay": 20,
+                    "timezone": "UTC+1"
                 })
                 .end((err, res) => {
                     expect(res.body).to.deep.equal(expectedResult)
                 });
         });
-        it("POST/api/v1/businessDates/* should return specified payload", () => {
+        it("POST /api/v1/businessDates/* should return specified payload", () => {
             chai.request(app)
                 .post('/api/v1/businessDates/*')
                 .set('content-type', 'application/json')
                 .send({
                     "initialDate": dt.toISO(),
-                    "delay": 20
+                    "delay": 20,
+                    "timezone": "UTC+1"
                 })
                 .end((err, res) => {
                     expect(res.body).to.deep.equal(expectedResult)
