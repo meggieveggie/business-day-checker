@@ -18,11 +18,11 @@
   },
   "homepage": "https://github.com/meggieveggie/business-day-checker#readme",
   "dependencies": {
-    "body-parser": "^1.19.0",
+    "body-parser": "^1.20.1",
     "business-days-calculator": "^2.2.0",
     "date-holidays": "^1.4.3",
     "dotenv": "^8.1.0",
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "luxon": "^1.18.0"
   },
   "devDependencies": {
